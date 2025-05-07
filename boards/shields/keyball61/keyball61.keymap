@@ -1,7 +1,42 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 #include <behaviors.dtsi>
+#include <behaviors/studio_unlock.dtsi>
+#include <behaviors/mouse_keys.dtsi>
+#include <behaviors/mouse_key_press.dtsi>
+#include <behaviors/mouse_key_toggle.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/input_transform.h>
+
+#include <behaviors/insomnia.dtsi>
+#include <dt-bindings/zmk/insomnia.h>
+
+#include <input/processors/report_rate_limit.dtsi>
+#include <input/processors/xyz.dtsi>
+
+#define BAS 0
+#define LOWER 1
+#define RAISE 2
+#define MSK 3
+#define MSC 4
 
 / {
+    trackball_split {
+        compatible = "zmk,input-split";
+        device = <&trackball>;
+        input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
+        default {
+            layers = <MSK>;
+            process-next;
+            input-processors = <&xy_scaler 2 3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         device = <&trackball>;
