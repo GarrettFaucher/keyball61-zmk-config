@@ -44,3 +44,16 @@
            thus, the sensor would be a `wakeup-source` */
     };
 };
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
+        default {
+            layers = <MSK>;
+            process-next;
+            input-processors = <&xy_scaler 2 3>;
+        };
+    };
+}
