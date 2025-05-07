@@ -39,9 +39,9 @@
         y-input-code = <INPUT_REL_Y>;
 
         force-awake;
-        /* keep the sensor awake while ZMK activity state is ACTIVE,
-           fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
-           thus, the sensor would be a `wakeup-source` */
+        /*  keep the sensor awake while ZMK activity state is ACTIVE,
+            fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
+            thus, the sensor would be a `wakeup-source` */
     };
 };
 
@@ -54,4 +54,7 @@
     };
 };
 
-&trackball_split  { device = <&trackball>; input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>; };
+&trackball_split  {
+    device = <&trackball>;
+    input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>;
+};

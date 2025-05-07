@@ -83,7 +83,7 @@
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &mo MSC   &trans         &trans    &trans                                  &trans    &trans
             >;
-        }
+        };
 
         MSC_layer {
             display-name = "Mouse Scroll";
@@ -98,6 +98,6 @@
             input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
                 , <&xy_scaler 1 25>, <&x_scaler 0 1>
                 , <&to_wheel>;
-        }
+        };
     };
- };
+};
