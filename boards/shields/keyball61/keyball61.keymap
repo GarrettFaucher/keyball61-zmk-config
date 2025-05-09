@@ -19,8 +19,6 @@
 #include <input/processors/report_rate_limit.dtsi>
 #include <input/processors/xyz.dtsi>
 
-#include "keyball61_pmw3610.dtsi"
-
 #define BAS 0
 #define LOWER 1
 #define RAISE 2
@@ -28,44 +26,6 @@
 #define MSC 4
 
 / {
-    xy_transf: xy_transf {
-        compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <1>;
-        type = <INPUT_EV_REL>;
-        x-codes = <INPUT_REL_X>, <INPUT_REL_WHEEL>;
-        y-codes = <INPUT_REL_Y>, <INPUT_REL_HWHEEL>;
-    };
-    xy_scaler: xy_scaler {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X>, <INPUT_REL_Y>;
-        track-remainders;
-    };
-    x_scaler: x_scaler {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X>;
-    };
-    to_wheel: to_wheel {
-        compatible = "zmk,input-processor-code-mapper";
-        #input-processor-cells = <0>;
-        type = <INPUT_EV_REL>;
-        map = <INPUT_REL_X INPUT_REL_HWHEEL>
-            , <INPUT_REL_Y INPUT_REL_WHEEL>;
-    };
-    trackball_split {
-        compatible = "zmk,input-split";
-        device = <&trackball>;
-        input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-        default {
-            layers = <MSK>;
-            process-next;
-            input-processors = <&xy_scaler 2 3>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
         device = <&trackball>;
@@ -123,10 +83,6 @@
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans                                  &trans    &trans
             >;
-
-            input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                , <&xy_scaler 1 25>, <&x_scaler 0 1>
-                , <&to_wheel>;
         };
     };
 };
