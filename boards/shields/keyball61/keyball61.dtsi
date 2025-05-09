@@ -26,7 +26,6 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-charlieplex";
-        diode-direction = "col2row";
         wakeup-source;
 
         gpios
