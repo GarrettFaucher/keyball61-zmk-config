@@ -15,3 +15,10 @@ config ZMK_SPLIT
     default y
 
 endif
+
+if SHIELD_KEYBALL61_TRACKBALL
+
+config ZMK_SPLIT
+    default y
+
+endif
