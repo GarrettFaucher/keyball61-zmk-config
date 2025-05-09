@@ -1,8 +1,5 @@
 #include "keyball61.dtsi"
 
-&default_transform {
-  col-offset = <7>;
-};
 
 
 #include <input/processors/report_rate_limit.dtsi>
