@@ -45,7 +45,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &trackball {
-  status = "okay";
+    status = "okay";
 	irq-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	cpi = <500>;
 	evt-type = <INPUT_EV_REL>;

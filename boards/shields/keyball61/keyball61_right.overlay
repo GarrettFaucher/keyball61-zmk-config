@@ -1,5 +1,4 @@
 #include "keyball61.dtsi"
-#include "keyball61_pmw3610.dtsi"
 
 &kscan0 {
     col-gpios
