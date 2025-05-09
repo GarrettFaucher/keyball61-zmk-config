@@ -8,3 +8,6 @@
         , <&pro_micro 5 GPIO_ACTIVE_HIGH>
         ;
 };
+
+#include "keyball61_zplit.dtsi"
+&trackball_split { status = "disabled"; };
