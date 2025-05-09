@@ -14,3 +14,4 @@
   row-offset = <5>;
 };
 
+#include "keyball61_zplit.dtsi"

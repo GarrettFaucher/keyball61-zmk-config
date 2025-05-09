@@ -19,8 +19,6 @@
 #include <input/processors/report_rate_limit.dtsi>
 #include <input/processors/xyz.dtsi>
 
-#include "keyball61_pmw3610.dtsi"
-
 #define BAS 0
 #define LOWER 1
 #define RAISE 2
@@ -55,9 +53,9 @@
         map = <INPUT_REL_X INPUT_REL_HWHEEL>
             , <INPUT_REL_Y INPUT_REL_WHEEL>;
     };
-    trackball_split {
-        compatible = "zmk,input-split";
-        device = <&trackball>;
+    trackball {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>;
         input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
         default {
             layers = <MSK>;

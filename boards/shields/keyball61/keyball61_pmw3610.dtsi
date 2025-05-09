@@ -1,4 +1,3 @@
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -19,6 +18,10 @@
     };
 };
 
+&uart0 {
+	status = "disabled";
+};
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -28,19 +31,22 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
-        status = "okay";
+        status = "disabled";
         compatible = "pixart,pmw3610";
+        label = "Trackball";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-
-        force-awake;
-        /*  keep the sensor awake while ZMK activity state is ACTIVE,
-            fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
-            thus, the sensor would be a `wakeup-source` */
     };
+};
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&trackball {
+  status = "okay";
+	irq-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	cpi = <500>;
+	evt-type = <INPUT_EV_REL>;
+	x-input-code = <INPUT_REL_X>;
+	y-input-code = <INPUT_REL_Y>;
+	force-awake;
 };
