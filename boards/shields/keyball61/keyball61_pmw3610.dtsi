@@ -53,8 +53,3 @@
         trackball_split: trackball@0 { compatible = "zmk,input-split"; reg = <0>; };
     };
 };
-
-&trackball_split  {
-    device = <&trackball>;
-    input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>;
-};
