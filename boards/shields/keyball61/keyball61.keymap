@@ -121,10 +121,6 @@
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans                                  &trans    &trans
             >;
-
-            input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                , <&xy_scaler 1 25>, <&x_scaler 0 1>
-                , <&to_wheel>;
         };
     };
 };
