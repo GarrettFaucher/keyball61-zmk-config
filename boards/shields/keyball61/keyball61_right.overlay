@@ -10,7 +10,7 @@
 };
 
 &default_transform {
-  row-offset = <5>;
+  col-offset = <7>;
 };
 
 
