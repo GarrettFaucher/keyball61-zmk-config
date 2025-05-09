@@ -2,17 +2,17 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 6)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 8)>,
-                <NRF_PSEL(SPIM_MISO, 0, 7)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 15)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 16)>,
+                <NRF_PSEL(SPIM_MISO, 0, 14)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 6)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 8)>,
-                <NRF_PSEL(SPIM_MISO, 0, 7)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 15)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 16)>,
+                <NRF_PSEL(SPIM_MISO, 0, 14)>;
             low-power-enable;
         };
     };
@@ -39,14 +39,14 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &trackball {
     status = "okay";
-	irq-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	irq-gpios = <&gpio1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	cpi = <500>;
 	evt-type = <INPUT_EV_REL>;
 	x-input-code = <INPUT_REL_X>;
