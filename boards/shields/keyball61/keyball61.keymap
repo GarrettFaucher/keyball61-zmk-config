@@ -53,16 +53,16 @@
         map = <INPUT_REL_X INPUT_REL_HWHEEL>
             , <INPUT_REL_Y INPUT_REL_WHEEL>;
     };
-    // trackball_listener {
-    //     compatible = "zmk,input-listener";
-    //     device = <&trackball_split>;
-    //     input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-    //     default {
-    //         layers = <MSK>;
-    //         process-next;
-    //         input-processors = <&xy_scaler 2 3>;
-    //     };
-    // };
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>;
+        input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
+        default {
+            layers = <MSK>;
+            process-next;
+            input-processors = <&xy_scaler 2 3>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
