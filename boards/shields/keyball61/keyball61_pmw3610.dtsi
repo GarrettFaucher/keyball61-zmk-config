@@ -18,21 +18,7 @@
     };
 };
 
-&uart0 {
-	status = "disabled";
-};
-
-&spi0 {
-    status = "disabled";
-    compatible = "nordic,nrf-spim";
-
-    trackball: trackball@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-    };
-};
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi0 {
     status = "okay";
@@ -40,16 +26,25 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+    compatible = "nordic,nrf-spim";
+
+    trackball: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        // irq-gpios = <&gpio1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <500>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        force-awake;
+    };
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
-&trackball {
-    status = "okay";
-	irq-gpios = <&gpio1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <500>;
-	evt-type = <INPUT_EV_REL>;
-	x-input-code = <INPUT_REL_X>;
-	y-input-code = <INPUT_REL_Y>;
-	force-awake;
+/{
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };
