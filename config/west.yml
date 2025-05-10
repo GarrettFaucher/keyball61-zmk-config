@@ -84,11 +84,11 @@
 #     path: config
 manifest:
   remotes:
-    - name: zmk
+    - name: drorchen
       url-base: https://github.com/drorchen
   projects:
     - name: zmk
-      remote: zmk
+      remote: drorchen
       revision: trackball-support
       import: app/west.yml
   self:
