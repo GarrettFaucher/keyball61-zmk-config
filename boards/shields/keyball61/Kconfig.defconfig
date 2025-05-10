@@ -4,19 +4,12 @@ if SHIELD_KEYBALL61_LEFT
 config ZMK_KEYBOARD_NAME
     default "Keyball 61"
 
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
 
 endif
 
 if SHIELD_KEYBALL61_LEFT || SHIELD_KEYBALL61_RIGHT
-
-config ZMK_SPLIT
-    default y
-
-endif
-
-if SHIELD_KEYBALL61_TRACKBALL
 
 config ZMK_SPLIT
     default y
