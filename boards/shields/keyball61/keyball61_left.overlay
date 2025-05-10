@@ -1,6 +1,6 @@
 #include "keyball61.dtsi"
 
-#include <input/processors/report_rate_limit.dtsi>
-#include <input/processors/xyz.dtsi>
+// #include <input/processors/report_rate_limit.dtsi>
+// #include <input/processors/xyz.dtsi>
 
-#include "keyball61_pmw3610.dtsi"
+// #include "keyball61_pmw3610.dtsi"
