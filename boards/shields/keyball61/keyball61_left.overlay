@@ -1,5 +1,5 @@
 #include "keyball61.dtsi"
-#include "keyball61_pmw3610.dtsi"
-#include "keyball61_zplit.dtsi"
+// #include "keyball61_pmw3610.dtsi"
+// #include "keyball61_zplit.dtsi"
 
-&trackball_split { status = "disabled"; }
+// &trackball_split { status = "disabled"; }

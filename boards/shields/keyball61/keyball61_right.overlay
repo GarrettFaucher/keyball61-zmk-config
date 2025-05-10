@@ -9,7 +9,7 @@
 #include <input/processors/report_rate_limit.dtsi>
 #include <input/processors/xyz.dtsi>
 
-#include "keyball61_pmw3610.dtsi"
-#include "keyball61_zplit.dtsi"
-// &trackball_split { device = <&trackball>; input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>; };
-&trackball_split { status = "disabled"; }
+// #include "keyball61_pmw3610.dtsi"
+// #include "keyball61_zplit.dtsi"
+// // &trackball_split { device = <&trackball>; input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>; };
+// &trackball_split { status = "disabled"; };
