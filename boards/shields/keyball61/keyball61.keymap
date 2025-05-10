@@ -53,7 +53,7 @@
         map = <INPUT_REL_X INPUT_REL_HWHEEL>
             , <INPUT_REL_Y INPUT_REL_WHEEL>;
     };
-    trackball {
+    trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
@@ -66,7 +66,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-        device = <&trackball>;
 
         default_layer {
             display-name = "default";
