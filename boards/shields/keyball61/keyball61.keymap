@@ -49,14 +49,14 @@
             >;
         };
 
-        MSK_layer {
+        MSC_layer {
             display-name = "Scroll";
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                &trans    &trans    &trans    &trans    &trans    &trans   &trans         &trans    &trans                                  &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans                                  &trans    &trans
             >;
         };
     };
