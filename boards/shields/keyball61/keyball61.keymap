@@ -39,7 +39,7 @@
                 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                              &kp Y     &kp U     &kp I     &kp O     &kp P     &kp ENTER
                 &kp GRAVE &kp A     &kp S     &kp D     &kp F     &kp G                              &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp APOS
                 &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &kp LBKT       &kp RBKT  &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                &kp LCTRL &kp LGUI  &kp LALT  &kp Z     &kp M     &mo MSK &kp SPACE      &kp SPACE &mo RAISE                               &kp BSLH  &kp DEL
+                &kp LCTRL &kp LGUI  &kp LALT  &kp Z     &kp M     &mo LOWER &kp SPACE      &kp SPACE &mo RAISE                               &kp BSLH  &kp DEL
             >;
         };
 
@@ -47,8 +47,8 @@
             display-name = "Mouse + Fn";
             bindings = <
                 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &mkp MCLK &mkp RCLK &trans
-                &mo MSC   &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &mkp LCLK &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &studio_unlock &trans    &trans                                  &trans    &trans
             >;
