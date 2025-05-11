@@ -8,9 +8,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BAS 0
-#define MSK 1
+#define LOWER 1
 #define RAISE 2
-#define MSC 3
+#define MSK 3
+#define MSC 4
 
 / {
     keymap {
@@ -46,6 +47,17 @@
                 &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans                                  &trans    &trans
+            >;
+        };
+
+        MSC_layer {
+            display-name = "Mouse";
+            bindings = <
+                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &mkp MCLK &mkp RCLK &trans
+                &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &mkp LCLK &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &mo MSC   &trans         &trans    &trans                                  &trans    &trans
             >;
         };
 
