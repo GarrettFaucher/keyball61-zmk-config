@@ -2,6 +2,7 @@
 #include "keyball61_layouts.dtsi"
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/xyz.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 
 &physical_layout0 {
@@ -29,7 +30,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
 
-        input-processors = <&zip_mouse_layer> <&zip_report_rate_limit 8>;
+        input-processors = <&zip_zyx>, <&zip_mouse_layer>, <&zip_report_rate_limit 8>;
         precise {
                 layers = <LOWER>;
                 process-next;

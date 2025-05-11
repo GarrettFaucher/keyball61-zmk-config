@@ -52,6 +52,9 @@
     };
 };
 
+#include <input/processors/xyz.dtsi>
+
 &trackball_split {
     device = <&trackball>;
+    input-processors = <&zip_xyz>;
 };
