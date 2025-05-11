@@ -50,7 +50,7 @@
             >;
         };
 
-        MSC_layer {
+        MSK_layer {
             display-name = "Mouse";
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &trans
