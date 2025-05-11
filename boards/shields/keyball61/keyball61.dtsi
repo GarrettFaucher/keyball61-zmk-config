@@ -22,10 +22,10 @@
         };
     };
 
-    zip_mouse_layer: zip_mouse_layer {
+    zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-        require-prior-idle-ms = <500>;
+        require-prior-idle-ms = <1000>;
         excluded-positions = <3 4>;
     };
 
@@ -41,7 +41,7 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_mouse_layer>; //, <&zip_report_rate_limit 8>;
+        input-processors = <&zip_temp_layer 3 2000>; //, <&zip_report_rate_limit 8>;
         // precise {
         //         layers = <1>;
         //         process-next;
