@@ -26,7 +26,7 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         require-prior-idle-ms = <1000>;
-        excluded-positions = <3 4>;
+        excluded-positions = <4>;
     };
 
     to_wheel: to_wheel {
