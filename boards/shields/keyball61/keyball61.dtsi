@@ -26,6 +26,14 @@
         excluded-positions = <3 4>;
     };
 
+    to_wheel: to_wheel {
+                compatible = "zmk,input-processor-code-mapper";
+                #input-processor-cells = <0>;
+                type = <INPUT_EV_REL>;
+                map = <INPUT_REL_X INPUT_REL_HWHEEL>
+                    , <INPUT_REL_Y INPUT_REL_WHEEL>;
+        };
+
     trackball_listener: trackball_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
@@ -40,7 +48,8 @@
         scroll {
                 layers = <4>;
                 process-next;
-                input-processors = <&zip_xy_scaler 1 25>, <&zip_x_scaler 0 1>;
+                input-processors = <&zip_xy_scaler 1 25>, <&zip_x_scaler 0 1>
+                                , <&to_wheel>;
         };
     };
 
