@@ -23,7 +23,7 @@
         #input-processor-cells = <2>;
         require-prior-idle-ms = <500>;
         excluded-positions = <3>;
-    }
+    };
 
     trackball_listener: trackball_listener {
         status = "disabled";
