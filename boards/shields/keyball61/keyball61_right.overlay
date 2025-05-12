@@ -53,5 +53,5 @@
 
 &trackball_split {
     device = <&trackball>;
-    input-processors = <&zip_xyz>;
+    input-processors = <&zip_mouse_layer 3 2000>, <&zip_xyz>;
 };
