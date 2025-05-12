@@ -57,7 +57,8 @@
 };
 
 /  {
-    mkp_input_listener: mkp_input_listener {
+    some_input_listener: some_input_listener {
+        status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_mouse_layer 3 2000>;
