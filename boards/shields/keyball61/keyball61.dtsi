@@ -40,7 +40,7 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_zxy>, <&zip_mouse_layer 3 2000>;
+        input-processors = <&zip_zxy>, <&zip_temp_layer 3 2000>;
         // precise {
         //         layers = <1>;
         //         process-next;
