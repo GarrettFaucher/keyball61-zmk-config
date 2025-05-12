@@ -53,5 +53,13 @@
 
 &trackball_split {
     device = <&trackball>;
-    input-processors = <&zip_mouse_layer 3 2000>, <&zip_xyz>;
+    input-processors = <&zip_xyz>;
 };
+
+/  {
+    mkp_input_listener: mkp_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_mouse_layer 3 2000>;
+    };
+}
