@@ -46,12 +46,12 @@
         //         process-next;
         //         input-processors = <&zip_xy_scaler 2 3>;
         // };
-        // scroll {
-        //         layers = <4>;
-        //         process-next;
-        //         input-processors = <&zip_xy_scaler 1 25>, <&zip_x_scaler 0 1>
-        //                         , <&to_wheel>;
-        // };
+        scroll {
+            layers = <4>;
+            process-next;
+            input-processors = <&zip_xy_scaler 1 25>, <&zip_x_scaler 0 1>
+                            , <&to_wheel>;
+        };
     };
 
     chosen {
