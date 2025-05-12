@@ -55,12 +55,3 @@
     device = <&trackball>;
     input-processors = <&zip_xyz>;
 };
-
-// /  {
-//     some_input_listener: some_input_listener {
-//         status = "okay";
-//         compatible = "zmk,input-listener";
-//         device = <&trackball>;
-//         input-processors = <&zip_temp_layer 3 2000>;
-//     };
-// };

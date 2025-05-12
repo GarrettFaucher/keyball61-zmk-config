@@ -21,13 +21,6 @@
         };
     };
 
-    // zip_mouse_layer: zip_mouse_layer {
-    //     compatible = "zmk,input-processor-temp-layer";
-    //     #input-processor-cells = <2>;
-    //     require-prior-idle-ms = <1000>;
-    //     excluded-positions = <3 4>;
-    // };
-
     to_wheel: to_wheel {
         compatible = "zmk,input-processor-code-mapper";
         #input-processor-cells = <0>;
@@ -40,12 +33,7 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_zxy>, <&zip_temp_layer 3 2000>;
-        // precise {
-        //         layers = <1>;
-        //         process-next;
-        //         input-processors = <&zip_xy_scaler 2 3>;
-        // };
+        input-processors = <&zip_zxy>, <&zip_temp_layer 3 2000>, <&zip_xy_scaler 2 3>;
         scroll {
             layers = <4>;
             process-next;
