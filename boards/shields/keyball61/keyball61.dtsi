@@ -21,12 +21,12 @@
         };
     };
 
-    zip_mouse_layer: zip_mouse_layer {
-        compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <2>;
-        require-prior-idle-ms = <1000>;
-        excluded-positions = <3 4>;
-    };
+    // zip_mouse_layer: zip_mouse_layer {
+    //     compatible = "zmk,input-processor-temp-layer";
+    //     #input-processor-cells = <2>;
+    //     require-prior-idle-ms = <1000>;
+    //     excluded-positions = <3 4>;
+    // };
 
     to_wheel: to_wheel {
         compatible = "zmk,input-processor-code-mapper";
