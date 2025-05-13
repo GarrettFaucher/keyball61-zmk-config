@@ -49,9 +49,14 @@
     };
 };
 
-#include <input/processors/xyz.dtsi>
+// #include <input/processors/xyz.dtsi>
 
-&trackball_split {
+// &trackball_split {
+//     device = <&trackball>;
+//     input-processors = <&zip_xyz>;
+// };
+
+&trackball_listener {
     device = <&trackball>;
-    input-processors = <&zip_xyz>;
+    status = "okay";
 };
