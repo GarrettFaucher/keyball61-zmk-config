@@ -20,6 +20,6 @@ manifest:
       revision: main
     - name: zmk-pmw3XXX-driver
       remote: andre-tm-hui
-      revision: pmw3360
+      revision: working-3360
   self:
     path: config
