@@ -17,7 +17,7 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         require-prior-idle-ms = <1000>;
-    }
+    };
 
     split_inputs {
         #address-cells = <1>;
