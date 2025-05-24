@@ -13,6 +13,12 @@
 };
 
 / {
+    zip_mouse_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <1000>;
+    }
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -36,14 +42,14 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         input-processors = <&zip_zxy>,
-                            <&zip_temp_layer 3 2000>;
+                            <&zip_mouse_layer 3 1000>;
         scroll {
             layers = <4>;
             process-next;
             input-processors = <&zip_xy_scaler 1 25>, <&zip_x_scaler 0 1>
                             , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
                             , <&to_wheel>;
-        };
+        };\
     };
 
     chosen {
