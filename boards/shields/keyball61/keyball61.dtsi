@@ -56,4 +56,10 @@
             , <&pro_micro 18 GPIO_ACTIVE_HIGH>
             ;
     };
+
+    mouse_listener {
+        status = "okay";
+		compatible = "zmk,input-listener";
+		device = <&mouse>;
+	};
 };
