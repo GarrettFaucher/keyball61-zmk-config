@@ -1,25 +1,16 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      url-base: https://github.com/petejohanson
     - name: bullwinkle3000
       url-base: https://github.com/bullwinkle3000
-    - name: badjeff
-      url-base: https://github.com/badjeff
-    - name: andre-tm-hui
-      url-base: https://github.com/andre-tm-hui
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: feat/pointers-move-scroll
       import: app/west.yml
-    - name: zmk-input-processor-xyz
-      remote: badjeff
+    - name: zmk-pmw3360-driver
+      remote: bullwinkle3000
       revision: main
-    - name: zmk-pmw3XXX-driver
-      remote: andre-tm-hui
-      revision: working-3360
   self:
     path: config
