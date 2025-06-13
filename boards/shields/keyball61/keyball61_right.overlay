@@ -15,7 +15,7 @@
 			pinmux = <NRF_PSEL(SPIM_MISO, 1, 11)>;
 			input-enable;
 		};
-    J};
+    };
 
     spi0_sleep: spi0_sleep {
         group1 {
