@@ -6,10 +6,8 @@ manifest:
       url-base: https://github.com/bullwinkle3000
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: andre-tm-hui
-      url-base: https://github.com/andre-tm-hui
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: george-norton
+      url-base: https://github.com/george-norton
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,8 +16,8 @@ manifest:
     - name: zmk-input-processor-xyz
       remote: badjeff
       revision: main
-    - name: zmk-pmw3XXX-driver
-      remote: andre-tm-hui
-      revision: working-3360
+    - name: zmk-driver-pmw3360
+      remote: george-norton
+      revision: main
   self:
     path: config
