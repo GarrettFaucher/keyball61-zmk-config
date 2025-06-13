@@ -1,5 +1,5 @@
 #include "keyball61.dtsi"
-#include <dt-bindings/pinctrl/nordic-nrf-pinctrl.h>
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
 
 &default_transform {
     col-offset = <9>;
