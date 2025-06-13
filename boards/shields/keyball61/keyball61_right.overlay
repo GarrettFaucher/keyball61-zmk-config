@@ -1,4 +1,5 @@
 #include "keyball61.dtsi"
+#include <dt-bindings/pinctrl/nordic-nrf-pinctrl.h>
 
 &default_transform {
     col-offset = <9>;
@@ -25,8 +26,10 @@
 
 
 &spi0 {
-	status = "okay";
-	cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 	mouse: mouse@0 {
 		compatible = "pixart,pmw3360";
 		status = "okay";
