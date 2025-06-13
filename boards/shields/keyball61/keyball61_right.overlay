@@ -6,17 +6,21 @@
 };
 
 &pinctrl {
-	spi0_default: spi0_default {
-		group1 {
-			/* CSN, SCK, MOSI */
-			pinmux = <SPI0_CSN_P0_09>, <SPI0_SCK_P1_13>, <SPI0_TX_P0_10>;
-		};
-		group2 {
-			/* MISO */
-			pinmux = <SPI0_RX_P1_11>;
-			input-enable;
-		};
-	};
+    spi0_default: spi0_default {
+        group1 {
+            /* CSN, SCK, MOSI */
+
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,   /* B1 */
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>,   /* B2 */
+                    <NRF_PSEL(SPIM_CS,  0,  9)>;    / * B6 * /
+        };
+
+        group2 {
+            /* input: MISO */
+            psels = <NRF_PSEL(SPIM_MISO, 1, 11)>;   /* B3 */
+            input-enable;
+        };
+    };
 };
 
 
@@ -26,7 +30,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    # cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
         status = "okay";
