@@ -13,7 +13,6 @@
         };
         group2 {
 			psels = <NRF_PSEL(SPIM_MISO, 1, 11)>;
-			input-enable;
 		};
     };
 
@@ -25,7 +24,6 @@
         };
         group2 {
 			psels = <NRF_PSEL(SPIM_MISO, 1, 11)>;
-			input-enable;
 		};
     };
 };
