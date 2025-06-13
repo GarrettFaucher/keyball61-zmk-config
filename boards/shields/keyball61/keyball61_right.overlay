@@ -6,21 +6,19 @@
 };
 
 &pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_CSN,  0,  9)>,
-                    <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
-        };
-
-        group2 {
-            psels = <NRF_PSEL(SPIM_MISO, 1, 11)>;
-            input-enable;
-        };
-    };
+	spi0_default: spi0_default {
+		group1 {
+			/* CSN, SCK, MOSI */
+			pinmux = <SPI0_CSN_P0_09>, <SPI0_SCK_P1_13>, <SPI0_TX_P0_10>;
+		};
+		group2 {
+			/* MISO */
+			pinmux = <SPI0_RX_P1_11>;
+			input-enable;
+		};
+	};
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &pro_micro_spi {
     status = "okay";
